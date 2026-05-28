@@ -1,0 +1,396 @@
+/* This CSS file styles a healthcare IoT dashboard with a modern, sleek design. It includes styles for the overall layout, sidebar, main content, topbar, cards, and responsive design for smaller screens. The dashboard features a dark theme with gradient backgrounds and subtle animations for interactive elements. */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #111827,
+        #1e293b
+    );
+
+    color:white;
+    min-height:100vh;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:260px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(15px);
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
+
+    padding:30px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:50px;
+}
+
+.logo-icon{
+
+    width:55px;
+    height:55px;
+
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+}
+
+.logo h2{
+    font-size:28px;
+}
+
+.logo p{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.menu li:hover,
+.menu .active{
+
+    background:
+    rgba(255,255,255,0.08);
+
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content{
+    flex:1;
+    padding:30px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.topbar h1{
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+.topbar p{
+    color:#94a3b8;
+}
+
+.connection-box{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    background:
+    rgba(255,255,255,0.06);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.dot{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:red;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.4);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+    margin-bottom:30px;
+}
+
+.card{
+
+    background:
+    rgba(255,255,255,0.07);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:28px;
+
+    transition:0.4s;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.3);
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+    height:200px;
+
+    border-radius:50%;
+
+    top:-100px;
+    right:-100px;
+
+    opacity:0.1;
+}
+
+.red-card::before{
+    background:#ef4444;
+}
+
+.green-card::before{
+    background:#22c55e;
+}
+
+.blue-card::before{
+    background:#38bdf8;
+}
+
+.card-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.card-title{
+    color:#cbd5e1;
+    margin-bottom:10px;
+}
+
+.card-value{
+
+    font-size:72px;
+    font-weight:700;
+
+    margin-bottom:5px;
+}
+
+.card-unit{
+    color:#94a3b8;
+}
+
+.card-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:32px;
+}
+
+.red-icon{
+    background:rgba(239,68,68,0.15);
+}
+
+.green-icon{
+    background:rgba(34,197,94,0.15);
+}
+
+.blue-icon{
+    background:rgba(56,189,248,0.15);
+}
+
+.card-footer{
+
+    margin-top:25px;
+
+    padding-top:18px;
+
+    border-top:
+    1px solid rgba(255,255,255,0.08);
+
+    color:#94a3b8;
+}
+
+.device-list p{
+    margin-bottom:10px;
+}
+
+/* =========================
+   CHART
+========================= */
+
+.chart-section{
+
+    background:
+    rgba(255,255,255,0.07);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:30px;
+}
+
+.chart-header{
+    margin-bottom:25px;
+}
+
+.chart-header h2{
+    font-size:28px;
+}
+
+canvas{
+    width:100% !important;
+    height:450px !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+    }
+
+    .card-value{
+        font-size:52px;
+    }
+
+    .topbar h1{
+        font-size:28px;
+    }
+
+}

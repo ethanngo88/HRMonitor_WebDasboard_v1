@@ -1,0 +1,266 @@
+/* This HTML file defines the structure of a healthcare IoT dashboard. 
+
+It includes a sidebar for navigation, a topbar for displaying the dashboard title and connection status, and a main content area that features cards for heart rate, blood oxygen levels, and device status, as well as a section for real-time health analytics displayed in a chart. 
+
+The dashboard is designed to be visually appealing and user-friendly, with a focus on real-time monitoring of health data from IoT devices. */
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Healthcare IoT Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CHART -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ❤
+            </div>
+
+            <div>
+                <h2>HealthIoT</h2>
+                <p>Realtime Monitor</p>
+            </div>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                Dashboard
+            </li>
+
+            <li>
+                Analytics
+            </li>
+
+            <li>
+                Devices
+            </li>
+
+            <li>
+                Reports
+            </li>
+
+            <li>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Healthcare IoT Dashboard
+                </h1>
+
+                <p>
+                    ESP32 + MAX30102 + WebSocket Realtime
+                </p>
+
+            </div>
+
+            <div class="connection-box">
+
+                <span class="dot"
+                      id="dot">
+                </span>
+
+                <span id="status">
+                    Disconnected
+                </span>
+
+            </div>
+
+        </header>
+
+        <!-- CARDS -->
+
+        <section class="cards">
+
+            <!-- HEART RATE -->
+
+            <div class="card red-card">
+
+                <div class="card-top">
+
+                    <div>
+
+                        <p class="card-title">
+                            Heart Rate
+                        </p>
+
+                        <h2 class="card-value"
+                            id="heartRate">
+                            0
+                        </h2>
+
+                        <span class="card-unit">
+                            BPM
+                        </span>
+
+                    </div>
+
+                    <div class="card-icon red-icon">
+                        ❤
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    Live monitoring active
+
+                </div>
+
+            </div>
+
+            <!-- SPO2 -->
+
+            <div class="card green-card">
+
+                <div class="card-top">
+
+                    <div>
+
+                        <p class="card-title">
+                            Blood Oxygen
+                        </p>
+
+                        <h2 class="card-value"
+                            id="spo2">
+                            0
+                        </h2>
+
+                        <span class="card-unit">
+                            %
+                        </span>
+
+                    </div>
+
+                    <div class="card-icon green-icon">
+                        🫁
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    Oxygen saturation tracking
+
+                </div>
+
+            </div>
+
+            <!-- DEVICE -->
+
+            <div class="card blue-card">
+
+                <div class="card-top">
+
+                    <div>
+
+                        <p class="card-title">
+                            Device Status
+                        </p>
+
+                        <div class="device-list">
+
+                            <p>
+                                ESP32 Connected
+                            </p>
+
+                            <p>
+                                Sensor Active
+                            </p>
+
+                            <p>
+                                WebSocket Running
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-icon blue-icon">
+                        📡
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    Edge IoT Device Online
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CHART -->
+
+        <section class="chart-section">
+
+            <div class="chart-header">
+
+                <h2>
+                    Realtime Health Analytics
+                </h2>
+
+            </div>
+
+            <canvas id="healthChart"></canvas>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
