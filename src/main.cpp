@@ -14,8 +14,8 @@
 #define SCREEN_HEIGHT 64
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
-const char* ssid = "Tuan Anh";
-const char* password = "tuananh276";
+const char* ssid = "phongrunners";
+const char* password = "homong123";
 const char* apSsid = "HRMonitor_AP";
 const char* apPassword = "12345678";
 
